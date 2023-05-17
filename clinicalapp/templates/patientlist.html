@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Patients</h1>
+    <table>
+        <thead>
+            <th>id</th>
+            <th>lastname</th>
+            <th>firstname</th>
+            <th>age</th>
+        </thead>
+        {% for patient in patient_list%}
+        <tr>
+            <td>{{patient.id}}</td>
+            <td>{{patient.firstname}}</td>
+            <td>{{patient.lastname}}</td>
+            <td>{{patient.age}}</td>
+            <td><a href="/update/{{patient.id}}">update</a></td>
+            <td><a href="/delete/{{patient.id}}">delete</a></td>
+        </tr>
+        {%endfor%}
+    </table>
+    <br>
+        <a href="create">add patient</a>
+</body>
+</html>
